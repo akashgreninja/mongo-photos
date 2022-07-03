@@ -29,10 +29,10 @@ function Imagedisplay() {
     <div>Imagedisplay</div>
     { notes.map((e)=>{
         const base=btoa(String.fromCharCode(...new Uint8Array(e.photo.data.data)));
-        console.log(e.photo.data.data)
+        // console.log(e.photo.data.data)
         console.log(base)
         // return <img src={`data:image/jpeg;charset=utf-8;base64,${convertBufferToBase64(e.photo.data.data)}`} alt="sassq" />
-        return <img src={`data:image/jpg;base64${base}`} alt="sassq" />
+        return <img src={`data:image/jpeg;base64,${base}`} alt="sassq" />
         
     })}
     </>

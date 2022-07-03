@@ -20,7 +20,7 @@ router.post("/goimages",fileUpload.single('image'),async(req,res)=>{
       const note = new User({
         email,
         photo:{
-          data:req.file.filename,
+          data:req.body.name,
           contentType:'image/jpg'
         }
         
@@ -46,7 +46,7 @@ router.post("/goimages",fileUpload.single('image'),async(req,res)=>{
 
 router.get('/getall',async(req,res)=>{
   try{
-    const pics=await User.find({id:"62c034f7b66d18eb6c9a5f57"})
+    const pics=await User.find({id:"62c06aedcdc9038182dd9a0a"})
     res.json(pics);
   }
   catch(error){

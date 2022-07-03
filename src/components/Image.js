@@ -68,7 +68,7 @@ const Image = () => {
           id="hola"
           ref={filePickerRef}
           type="file"
-          accept=".jpg,png,.jpeg"
+          accept=".jpg,.png,.jpeg"
           onChange={pickedHandle}
           style={{ display: "none" }}
         />
