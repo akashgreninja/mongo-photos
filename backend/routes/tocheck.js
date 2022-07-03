@@ -9,27 +9,25 @@ const fs =require('fs')
 router.post("/goimages",fileUpload.single('image'),async(req,res)=>{
     try {
      
-      const  {email,file}  = req.body;
+      const  {email,photo}  = req.body;
+      console.log(photo)
       
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
       }
 
-      console.log(file)
+      // console.log(file)
       const note = new User({
         email,
-        photo:{
-          data:req.body.name,
-          contentType:'image/jpg'
-        }
+        photo:photo.image
         
       },
       // console.log(photo)
       )
       const SavedNote = await note.save();
-      console.log(SavedNote)
-      // console.log(req.file)
+      // console.log(SavedNote)
+    
 
       // res.json(SavedNote);
     }

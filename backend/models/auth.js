@@ -11,11 +11,8 @@ const UserSchema = new Schema({
         
        },
        photo:{
-        data:Buffer,
-        contentType:String,
-       
-        
-       },
+        type:String
+       }
     
    });
 
